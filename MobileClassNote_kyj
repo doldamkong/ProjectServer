@@ -1,0 +1,696 @@
+https://github.com/nashorn74/ProtoType/tree/master/app/src
+
+git add *
+git commit -m ""
+git push
+
+
+1. 앱 이름
+2. 앱 개요
+3. 주요기능 및 시스템구성
+4. 유사앱 벤치마킹
+5. 화면 디자인
+6. 개발 일정
+
+모바일클라이언트 <-> 서버 <-> DB
+
+1차<->2차 (이번 프로젝트에서는 순서를 바꿔서 함)
+
+1차: 클라이언트<-> 서버 연동
+2차: 클라이언트 화면/기능 개발
+3차: 데이터베이스연결
+
+마무리: 디버깅/테스트
+nashorn74@gmail.com
+
+
+
+//---------------------------------------------------------
+// master table
+// log data
+// 중복제거
+// 용량 증대를 예방
+
+// rdbms
+// dw
+
+// nosql
+// 필요한 목적에 맞게 
+// 사용방법이나 목적이 다 틀려요
+
+// 뉴스테이블 / 댓글테이블 / 뉴스 - 댓글 
+// 댓글이 계속 늘어나요 느려져요 
+// rdbms에서 뉴스컨텐츠를 관리하고, (정보와 댓글을 분리해서 관리)
+// nosql에 댓글을 저장 
+
+// 컨텐츠 관리 ㅜ ㅜ    ;; 
+//---------------------------------------------------------
+
+// req, res nosqlserver
+// scale-out 방식 
+// a to z 
+
+// mysql   - contents
+// mongodb - logdata
+
+//---------------------------------------------------------
+// rdbms : 정합성이 장점이다.
+// 분산처리서버는 대용량파일처리가 빠르지만 데이터 유실 등이 발생할 수 있다.
+
+// DW .. (운영데이터 / 분석데이터 분리) ㅠㅠ
+
+// transaction data traffic 
+
+
+
+
+-----------------------------------------------------------
+# memo 합침 :
+-----------------------------------------------------------
+170914
+$ git clone https://github.com/doldamkong/AngularJSExam.git
+$ cd AngularJSExam
+$ npm install -g yo
+$ npm install -g bower
+$ npm install -g grunt-cli
+$ npm install -g generator-angular
+
+$ yo angular AngularJSExam
+n
+n
+y
+enter
+y
+y
+
+$ ls -la
+$ npm install
+angular
+bootstrap
+
+$ grunt serve
+$ grunt build
+
+yo angular:controller login
+yo angular:controller signup
+yo angular:controller user-detail
+yo angular:controller user-list
+yo angular:controller user-withdraw
+
+login.html
+signup.html
+user-detail.html
+user-list.html
+user-withdraw.html
+
+$ bower install
+angular-bootstrap
+
+//bower 라이브러리 추가
+bower install angular-bootstrap --save
+bower install angular-ui-router --save
+
+---------------------------------------------------------
+170916
+onCreate
+
+//데이터를 뷰홀더에 던져서 셀에 보낸 사람, 금액을 세팅한다기까지 
+//리스트로 처리해야할 총개수
+
+public void onSearch(View view) {
+resData = new Gson().fromJson(trxData, BankModel3.class);
+}
+class TrxAdapter extends Recyc
+
+만개가 가더라도 돌려쓰니까 (cf. 만개가 다 생성)
+
+xml 을 뷰로 만든다.
+직접 만든다.
+커스텀뷰를 만드는 방법
+
+BankModel3 resData;
+TrxAdapter trxadapter;
+
+class TrxAdapter extends RecyclerView,Adapter<TrxViewHolder>{
+
+@override
+public TrxViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+View view=getLayoutInflater().inflate(R.layout.cell_trx_Layout, parent, false);
+return resData.getBody(view);   }
+trxAdapter = new TrxAdapter();  }
+
+getBody().size();
+데이타의 총개수
+
+액티비티가 하나의 화면이다
+안드로이드 스튜디오는 코딩 말고 힌트로 클릭
+
+연습
+1. json 의 값의 자리에 올수있는것은 값
+{"amt":1000000}
+
+Json Parser Online 
+json.parser.online.fr
+
+172.16.1.248/
+카카오 오븐
+
+//스플리시
+- 초화면
+
+- 아이디는 이메일형식으로 입력받고 1줄로만 처리
+- 비번은 
+- 록
+
+//메인서비스
+- 
+
+기간 검색
+
+레이아웃
+위젯
+
+리스트뷰 (게시판?)
+그리드뷰 (소핑몰)
+
+1) 리사이클러뷰 (판대기)
+2) 커스텀 셀
+3) 연결 
+4) 
+
+데이타 섬 판대기 
+
+아답터
+
+방향성
+
+늘려주는 녀석 홀더
+
+구성요소 클래스
+
+데이터는 서버에 있죠
+
+통신
+
+제이슨
+
+파싱
+
+Jason
+pharsing
+
+---------------------------------------------------------
+170922
+https://github.com/nashorn74/ProtoType/tree/master/app/src
+
+git cmd
+60029513@60029513-PC MINGW64 ~
+$ cd AndroidStudioProjects/
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects
+$ cd MyApplication/
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication
+$ ls
+app/    build.gradle  gradle.properties  gradlew.bat       MyApplication.iml
+build/  gradle/       gradlew*           local.properties  settings.gradle
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication
+$ ls -l
+total 27
+drwxr-xr-x 1 60029513 197121    0 9월  22 17:52 app/
+drwxr-xr-x 1 60029513 197121    0 9월  22 17:52 build/
+-rw-r--r-- 1 60029513 197121  521 9월   8 17:24 build.gradle
+drwxr-xr-x 1 60029513 197121    0 9월   8 17:24 gradle/
+-rw-r--r-- 1 60029513 197121  747 9월   8 17:24 gradle.properties
+-rwxr-xr-x 1 60029513 197121 4971 9월   8 17:24 gradlew*
+-rw-r--r-- 1 60029513 197121 2404 9월   8 17:24 gradlew.bat
+-rw-r--r-- 1 60029513 197121  461 9월   8 17:24 local.properties
+-rw-r--r-- 1 60029513 197121  867 9월   8 17:42 MyApplication.iml
+-rw-r--r-- 1 60029513 197121   16 9월   8 17:24 settings.gradle
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication
+$ git init
+Initialized empty Git repository in C:/Users/60029513/AndroidStudioProjects/MyApplication/.git/
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git add *
+The following paths are ignored by one of your .gitignore files:
+MyApplication.iml
+build
+local.properties
+Use -f if you really want to add them.
+warning: LF will be replaced by CRLF in gradlew.
+The file will have its original line endings in your working directory.
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git commit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got '60029513@60029513-PC.(none)')
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git config --global user.email "uzuchoigang@naver.com"
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git config --global user.name "Kang yun ju"
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git commit -m "first commit"
+[master (root-commit) 9dce721] first commit
+ 37 files changed, 871 insertions(+)
+ create mode 100644 app/.gitignore
+ create mode 100644 app/build.gradle
+ create mode 100644 app/proguard-rules.pro
+ create mode 100644 app/src/androidTest/java/com/example/a60029513/myapplication/ExampleInstrumentedTest.java
+ create mode 100644 app/src/main/AndroidManifest.xml
+ create mode 100644 app/src/main/java/com/example/a60029513/myapplication/util/ListViewActivity.java
+ create mode 100644 app/src/main/java/com/example/a60029513/myapplication/util/MainActivity.java
+ create mode 100644 app/src/main/java/com/example/a60029513/myapplication/util/PushViewActivity.java
+ create mode 100644 app/src/main/java/com/example/a60029513/myapplication/util/WebMainActivity.java
+ create mode 100644 app/src/main/java/com/example/a60029513/myapplication/util/u.java
+ create mode 100644 app/src/main/res/drawable/f150.jpg
+ create mode 100644 app/src/main/res/layout/activity_list_view.xml
+ create mode 100644 app/src/main/res/layout/activity_main.xml
+ create mode 100644 app/src/main/res/layout/list_item.xml
+ create mode 100644 app/src/main/res/menu/menu_push_view.xml
+ create mode 100644 app/src/main/res/mipmap-hdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+ create mode 100644 app/src/main/res/mipmap-mdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+ create mode 100644 app/src/main/res/mipmap-xhdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+ create mode 100644 app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+ create mode 100644 app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+ create mode 100644 app/src/main/res/values/colors.xml
+ create mode 100644 app/src/main/res/values/dimens.xml
+ create mode 100644 app/src/main/res/values/strings.xml
+ create mode 100644 app/src/main/res/values/styles.xml
+ create mode 100644 app/src/test/java/com/example/a60029513/myapplication/ExampleUnitTest.java
+ create mode 100644 build.gradle
+ create mode 100644 gradle.properties
+ create mode 100644 gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 gradle/wrapper/gradle-wrapper.properties
+ create mode 100644 gradlew
+ create mode 100644 gradlew.bat
+ create mode 100644 settings.gradle
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git push -u origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git remote add origin https://github.com/doldamkong/kyj.git
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$ git push -u origin master
+Counting objects: 72, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (51/51), done.
+Writing objects: 100% (72/72), 161.86 KiB | 8.09 MiB/s, done.
+Total 72 (delta 0), reused 0 (delta 0)
+To https://github.com/doldamkong/kyj.git
+ * [new branch]      master -> master
+Branch mpaster set up to track remote branch master from origin.
+
+60029513@60029513-PC MINGW64 ~/AndroidStudioProjects/MyApplication (master)
+$
+
+git pull
+git add *
+git commit -m ""
+git push
+
+
+-------------------------------------------------------------------------------------------
+public class ListViewActivity extends AppCompatActivity {
+
+ListView listView = null ;
+class Item {
+
+int image ;
+String title ;
+String text ;
+
+Item(int image, String title, String text) {
+
+this.image=image;
+this.title=title;
+this.text=text;
+
+}}
+
+
+레이아웃 꾸미는 방법
+
+ArrayList<Item> itemList = new ArrayList<Item>();
+class ItemAdaptyer extends ArrayAdapter {
+
+@NonNull
+@Override
+public View getView(int position @Nullable View convertView, @NonNull ViewGroup parent){
+if(convertView == null ) {
+LayoutInflater layoutInflater =
+(LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+convertView=layoutInflater.inflate(R.layout.list_item, null);
+}
+
+ImageView imageView=(ImageView)convertView.findViewById(R.id.image);
+TextView text1View=(TextView)convertView.findViewById(R.id.title);
+TextView text2View=(TextView)convertView.findViewById(R.id.text);
+Item item = itemList.get(position);
+imageView.setImageResource(item.image);
+text1View.setText(item.title);
+text2View.setText(item.text);
+return convertView;
+ 
+}
+
+public ItemAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List objects) {
+super(context, resource, objects);
+
+}
+
+ItemAdapter itemAdapter = null;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_list_view);
+listView=(ListView)findViewById(R.id.listview);
+
+itemList.add(new Item(R.drawable.f150, "Title01", "Text0101"));
+itemList.add(new Item(R.drawable.f150, "TVitle02", "Text0102"));
+itemList.add(new Item(R.drawable.f150, "Title03", "Text0103"));
+
+itemAdapter=new ItemAdapter(ListViewActivity.this, R.layout.list_item, itemList);
+listView.setAdapter(itemAdapter);
+
+
+}}
+
+---------------------------------------------------------
+170929
+
+Git Bash
+
+restfull api - 확장성
+
+session
+cookie
+
+login:logout
+
+web browser / hybrid app
+platform
+rest frame
+
+web server
+json
+
+rdbms crud
+
+
+---------------------------------------------------------
+170930
+
+test1234
+c:\mongodb
+https://db-engines.com/en/ranking
+
+sys
+
+11:06:19  
+Could not connect, server may not be running.	
+Can't connect to MySQL server on 'localhost' (10061)
+
+
+---------------------------------------------------------
+171013
+
+layout 
+xml
++
+java
+
+ui버튼을 클릭을 하면 이벤트 실행됌 --> http url 
+
+request
+response(JSON)
+
+query-><-
+
+webserver
+mysql
+mongodb
+
+front-end
+web app
+
+activity
+web view
++java
+
+request
+response
+html
+
+html
+css
+js
+
+angularJS
+bootstrap
+
+db연동
+express framework
+
+page 207
+page 277 
+
+backend
+MEAN
+
+IOT회사
+안드로이드/iOS
+
+서버
+
+화면 레이아웃
+api
+서버 연동 request/response
+
+테이블 설계
+
+restful api
+
+-----------------------------------project
+<git bash>
+
+git clone https://github.com/doldamkong/ProjectServer.git
+npm install -g express-generator
+
+express ProjectServer
+y
+
+/public 폴더는 html 루트디렉토리로 css 파일같은거있음
+
+cd ProjectServer
+ls -la
+
+npm install
+
+node bin/www 
+//웹서버 띄우는거
+
+웹창 띄워서 url 에다가 localhost:3000 라고 입력후 엔터
+
+ctrl+C //서버종료
+
+git add *
+git commit -m "Express Project Create"
+git push
+
+npm install mysql --save
+
+app.js
+8, 25
+
+
+---------------------------------------------------------
+171020
+
+restfulExam
+DB를 연결하고 API 연동~~~
+DB <-> api
+
+172.16.2.10
+
+///////////////////////////////////
+var multer = require('multer');
+var Storage = multer.diskStorage({
+     destination: function(req, file, callback) {
+         callback(null, "./public/upload_image/");
+     },
+     filename: function(req, file, callback) {
+     		file.uploadedFile = file.fieldname + "_" + 
+     			Date.now() + "_" + file.originalname;
+     		console.log('file.uploadedFile:'+file.uploadedFile);
+         callback(null, file.uploadedFile);
+     }
+ });
+ var upload = multer({
+     storage: Storage
+ }).single("image");
+app.post('/user/picture',function(req, res) {
+	upload(req, res, function(err) {
+		if (err) {
+			res.send(JSON.stringify(err));
+		} else {
+			res.send(JSON.stringify({url:req.file.uploadedFile,
+				description:req.body.description}));
+		}
+	});
+});
+
+///////////////////////////////////
+
+사진업로드
+
+pic
+canvas
+image file
+post multipart/formdata
+
+restful api
+module
+
+mysql
+mongodb
+
+로컬: img 파일 저장
+DB: url 저장
+
+AWS
+
+npm install multer
+
+---------------------------------------------------------
+171021
+
+AWS 계정 생성
+
+EC2
+인스턴스에 연결
+
+MSesFV59im4bK8(G)-tL(IqG?KE=3?pk
+
+안드로이드스튜디오
+app
+activity -emptyactivity 생성
+
+App: webview
+Web: AngularJS grunt serve 
+DB: restfulExam node rest.js 
+
+프리즈?
+
+ctrl + o 함수호출
+
+웹에서 앱으로 값을 넘겨줄수있다.
+detail:
+
+Log.i
+String
+
+api는 독립적으로 동작한다.
+api간 연결 서버 연결? 네트워크통신
+
+restful (node.js)에 세션이나 쿠키를 쓰면 안된다.
+
+REST 인터페이스 원칙
+컴포넌트
+
+자기서술적 메시지
+
+로그인 하면 토큰이 생성되고 토큰이 유지되는 동안 세션이 유지된다? 일까요??
+
+error 메세지 검색할때 : stackoverflow 사이트 이용
+
+<uses-permission android:name="android.permission.INTERNET"/>
+
+cd NodejsExam
+cd AngularJSExam
+cd ProjectServer
+--cd AndroidStudioProjects
+
+git add *
+git commit -m "171021_수업자료"
+git push
+
+
+---------------------------------------------------------
+171027
+
+page 707
+
+restful 
+angularjs
+
+npm install json-web-token
+yo angular:service session-service
+yo angular:service session-info
+
+index.html
+menu.html
+
+로그인 됐을때와 안됐을때 화면이 달라지게 하는거
+
+id와 토큰값을 가져올 수 있음
+각각 로그인 로그아웃을 처리하는 것을
+
+토큰 생성
+안드로이드와 웹앱이 동일한 AP로 기능을 각각 구현했죠
+
+로그인 세션이 유지되는 거 
+
+sessioninfo
+session service
+
+login js/html
+menu js/html
+
+Angular
+grunt serve
+
+노드 수정하고
+안드로이드 수정하고
+앵귤러까지 끝
+
